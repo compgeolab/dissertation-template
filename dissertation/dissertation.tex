@@ -5,19 +5,22 @@
 %% information, see the first few lines of mitthesis.sty.
 
 % Fill these in and they will be set throughout the document
-\newcommand{\Title}{Title of the dissertation}
-\newcommand{\Name}{Your Name}
+\newcommand{\Name}{Yoür Name}  % Note that you can use any Unicode character
 \newcommand{\Degree}{Bachelor of Science in the subject of Geophysics (Geology)}
+\newcommand{\Title}{Title of the dissertation}
+\newcommand{\ShortTitle}{Shorter title for the header}
 
-\documentclass[12pt,a4paper,titlepage]{report}
-% Formatting the bibliography
-\usepackage[round]{natbib}
+\documentclass[11pt,a4paper,oneside]{book}
+% Full Unicode support for non-ASCII characters
+\usepackage[utf8]{inputenc}
+% Typographical rules for English
+\usepackage[english]{babel}
 % Handling figures in PNG, JPG, PDF, etc
 \usepackage{graphicx}
 % Better and more extensive maths
 \usepackage{amsmath}
 % Set the borders of the page
-\usepackage[width=150mm,top=30mm,bottom=30mm]{geometry}
+\usepackage[width=150mm,top=40mm,bottom=30mm,headsep=10mm,headheight=5mm]{geometry}
 % Include links and metadata in PDFs
 \usepackage[pdftex,colorlinks=true]{hyperref}
 % Define command to insert month name and year as date
@@ -26,19 +29,25 @@
 \usepackage{fancyhdr}
 % To control the style of section titles
 \usepackage{titlesec}
+% Add the bibliography to the table of contents
+\usepackage[nottoc,chapter]{tocbibind}
+% Formatting the bibliography
+\usepackage[round]{natbib}
+% To insert dummy text into this template. Can be removed.
+\usepackage{lipsum}
 
 % Define a date format that is just the month and year
 \newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
 
-% Use References instead of Bibliography (the default)
-\renewcommand{\bibname}{References}
+% Customize the way Chapter headings are displayed
+\titleformat{\chapter}[display]{\normalfont\bfseries\centering}{\vspace{-2cm}\LARGE Chapter \thechapter}{5pt}{\Huge}
 
 % Setup metadata for the PDF and link colour
 \hypersetup{
     pdftitle={\Title},
     pdfauthor={\Name},
     pdfsubject={Dissertation submitted for the degree of \Degree{}},
-    linkcolor=blue,
+    linkcolor=black,
     citecolor=black,
     filecolor=black,
     urlcolor=blue
@@ -48,10 +57,12 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\chead{\fontsize{10pt}{12pt}\selectfont \Title{} -- \Name{}}
-\rhead{}
-\cfoot{\fontsize{10pt}{0}\selectfont \thepage}
+\lhead{\fontsize{10pt}{0}\selectfont\itshape \nouppercase\leftmark}
+\chead{}
+\rhead{\fontsize{9pt}{0}\selectfont \thepage}
+\cfoot{}
 \renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 
 % Increase the line spacing
 \renewcommand{\baselinestretch}{1.5}
@@ -68,7 +79,7 @@
   % set at the very top of this document.
   \include{cover}
 
-  \pagenumbering{roman}
+  \frontmatter
 
   % You need to edit the declaration to include an image of your signature. See
   % the declaration.tex file for instructions.
@@ -83,16 +94,12 @@
   % Table of contents and lists of figures and tables are automatically
   % generated (yay!)
   \tableofcontents
-  \newpage
   \listoffigures
-  \newpage
   \listoftables
-  \newpage
 
   \pagestyle{fancy}
-  \pagenumbering{arabic}
-  % Remove the "Chapter #" part of headings
-  \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\LARGE \thechapter\kern 1pc}
+
+  \mainmatter
 
   % These are the actual chapters of your dissertation. Add your text, figures,
   % tables, etc to these .tex files.
@@ -102,9 +109,15 @@
   \include{summary}
   \include{futurework}
 
-  \addcontentsline{toc}{chapter}{References}
-  \bibliographystyle{gji}
-  \bibliography*{references}
+  \pagestyle{plain}
+
+  % Use the American Geophysical Union citation style
+  \bibliographystyle{agu}
+  % Use References instead of Bibliography (the default)
+  \renewcommand{\bibname}{References}
+  % The References section is automatically populated from the cited entries of
+  % the references.bib file
+  \bibliography{references}
 
   % If you want to have an appendix, uncomment these two lines and add an
   % appendix.tex file with the text. Sections declared in it will automatically

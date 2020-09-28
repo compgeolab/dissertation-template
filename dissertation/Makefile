@@ -6,6 +6,7 @@
 DOCUMENT = dissertation
 # List other .tex needed files
 TEX_FILES := $(filter-out $(DOCUMENT).tex, $(wildcard *.tex))
+BIB_FILES := $(wildcard *.bib)
 # Folder where output will be placed
 OUTDIR = output
 # Name of the output file
@@ -19,5 +20,5 @@ all: $(OUTPUT)
 clean:
 	rm -rvf $(OUTDIR) figures/*eps-converted-to.pdf
 
-$(OUTPUT): $(DOCUMENT).tex $(TEX_FILES)
+$(OUTPUT): $(DOCUMENT).tex $(TEX_FILES) $(BIB_FILES)
 	$(LATEX_COMPILER) $(LATEX_FLAGS) $<
