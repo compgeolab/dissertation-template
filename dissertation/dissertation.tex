@@ -1,8 +1,9 @@
-
-%% The documentstyle options along with the pagestyle can be used to generate
-%% a technical report, a draft copy, or a regular thesis.  You may need to
-%% re-specify the pagestyle after you \include  cover.tex.  For more
-%% information, see the first few lines of mitthesis.sty.
+% Dissertation template for the Geophysics programs of the University of
+% Liverpool.
+%
+% This document sets the configuration and assembles the individual chapters
+% (stored in separate .tex files). See the declaration.tex file for
+% instructions on including scanned signature.
 
 % Fill these in and they will be set throughout the document
 \newcommand{\Name}{Yoür Name}  % Note that you can use any Unicode character
@@ -38,7 +39,7 @@
 % Define a date format that is just the month and year
 \newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
 
-% Customize the way Chapter headings are displayed
+% Customize how Chapter headings are displayed
 \titleformat{\chapter}[display]{\normalfont\bfseries\centering}{\vspace{-2cm}\LARGE Chapter \thechapter}{5pt}{\Huge}
 
 % Setup metadata for the PDF and link colour
