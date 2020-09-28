@@ -1,3 +1,6 @@
+# This file tells "conda" what to install in order to run the code. Things will
+# be installed in a separate environment (with the name defined below) so that
+# they don't interfere with other programs/projects.
 name: dissertation-CHANGE-THIS
 channels:
   - conda-forge
