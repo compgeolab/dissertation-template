@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+*.egg-info
+*.ipynb
+*eps-converted-to.pdf
+dissertation/output/
+dissertation/figures/signature.*
