@@ -12,8 +12,7 @@ OUTDIR = output
 # Name of the output file
 OUTPUT = $(OUTDIR)/$(DOCUMENT).pdf
 
-LATEX_COMPILER = latexmk
-LATEX_FLAGS = -pdf -outdir=$(OUTDIR)
+LATEX_COMPILER = latexmk -pdf -outdir=$(OUTDIR)
 
 all: $(OUTPUT)
 
@@ -21,4 +20,4 @@ clean:
 	rm -rvf $(OUTDIR) figures/*eps-converted-to.pdf
 
 $(OUTPUT): $(DOCUMENT).tex $(TEX_FILES) $(BIB_FILES)
-	$(LATEX_COMPILER) $(LATEX_FLAGS) $<
+	$(LATEX_COMPILER) $<
