@@ -26,7 +26,7 @@
 % Better and more extensive maths
 \usepackage{amsmath}
 % Set the borders of the page
-\usepackage[a4paper,left=1.5cm,right=1.5cm,top=2.5cm,bottom=2cm]{geometry}
+\usepackage[a4paper,margin=1.5cm,includehead,footskip=0cm,headheight=3mm,headsep=5mm]{geometry}
 % Include links and metadata in PDFs
 \usepackage[colorlinks=true]{hyperref}
 % Nice styling for headers and footers
@@ -65,11 +65,12 @@
 
 \begin{document}
 
+\thispagestyle{plain}
 % Insert the title, name, and affiliation. All of this is set at the very top
 % of the file. DON'T CHANGE THINGS HERE.
 \twocolumn[
   \begin{@twocolumnfalse}
-    \noindent \textbf{\large \Title{}}
+    \noindent \textbf{\Large \Title{}}
   \end{@twocolumnfalse}
   \vspace{0.7cm}
 ]
