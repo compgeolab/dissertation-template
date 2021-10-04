@@ -2,7 +2,7 @@
 
 **Author: Your Name**
 
-Supervisor: [Leonardo Uieda](https://www.leouieda.com)
+Supervisor: Leonardo Uieda
 
 ## Description
 
