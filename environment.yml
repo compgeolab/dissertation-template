@@ -8,17 +8,22 @@ channels:
 dependencies:
   - python==3.9
   - pip
+  # For executing tasks
+  - make
+  # For running LaTeX to build the dissertation PDF
+  - tectonic
   # The basic Scipy stack
   - numpy
   - scipy
   - pandas
-  - xarray
   - matplotlib
+  - xarray
+  # For spatial data and grids
+  - netcdf4
+  - pyproj
   # Jupyter notebook
   - jupyter
   - jupyterlab
-  # For executing tasks
-  - make
   # The Fatiando a Terra packages
   - verde
   - harmonica

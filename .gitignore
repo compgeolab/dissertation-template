@@ -10,7 +10,5 @@
 *.lot
 *.out
 *.toc
-dissertation/output/
+dissertation/dissertation.pdf
 dissertation/figures/signature.*
-supplements/output/
-supplements/diary_*.tex
