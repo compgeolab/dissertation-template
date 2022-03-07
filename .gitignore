@@ -1,6 +1,6 @@
 .ipynb_checkpoints
+__pycache__
 *.egg-info
-*.ipynb
 *eps-converted-to.pdf
 *.aux
 *.bbl
